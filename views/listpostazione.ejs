@@ -1,0 +1,26 @@
+
+<html><head><title>Esempio di View con EJS</title>
+  <script>
+function httpDelete(id) {
+    return fetch('/sede/'+id, {
+        method: 'DELETE'
+    });
+}    
+    </script>
+</head>
+<body><h1> Lista sedi definite</h1>
+  <table>
+      <tr><th>citta</th><th>indirizzo</th><th>Azioni</th></tr>
+    <% for (var i = 0; i < lista.length; i++) { %>
+       <tr><td><%= lista[i].citta %></td>
+           <td><%= lista[i].indirizzo %></td>
+           <td><input type='button' onclick='httpDelete("<%=lista[i].id %>")' value="Delete"/>
+               <input type='button' onclick="window.location.href='/sede/<%= lista[i].id %>'" value="Edit"/></td></td>
+          </tr>
+    <% } %>
+  </table>
+  <hr/>
+  <a href="/sede/crea">Clicca Qui per creare nuove sedi...</a>
+ 
+
+</body></html>
