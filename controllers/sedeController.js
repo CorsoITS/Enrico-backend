@@ -17,7 +17,7 @@ class SedeController {
             disponibili=true;
         }
 
-        logger.debug ("SedeController pag=" + pagnum + "luogo="+ citta + "disponibili=" + disponibili);
+        logger.debug ("SedeController pag=" + pagnum + "citta="+ citta + "disponibili=" + disponibili);
 
         let result=await sede.lista(pagnum,citta,disponibili);
         //return res.json(result);    
